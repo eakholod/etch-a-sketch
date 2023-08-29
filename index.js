@@ -22,15 +22,15 @@ function resetBoard() {
 function clearBoard() {
   let colectionOfCells = document.getElementsByClassName("cell");
   Array.from(colectionOfCells).forEach(function (cell) {
-    cell.style.backgroundColor = "white";
+    cell.classList.remove("active");
   });
 }
 
 function createGrid() {
   resetBoard();
   let gridSize = input.value;
-  if (gridSize < 5 || gridSize > 100) {
-    console.log("enter number between 4 and 50");
+  if (gridSize < 2 || gridSize > 100) {
+    alert("Please input a number between 2 - 100");
   } else {
     const size = grid.clientWidth / gridSize;
     let numberOfCellsTotal = gridSize * gridSize;
